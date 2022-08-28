@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InitGameDatas : MonoBehaviour
+public class InitGameDatas : Singleton<InitGameDatas>
 {
-    // Start is called before the first frame update
+    public Object[] CharacterResourceArray => m_characterResourceArray;
+    
+    private Object[] m_characterResourceArray = null;
+
     private void Start()
     {
         string characterImagesPath = $"{Strings.Images}/{Strings.Characters}";
-        Object[] characters = Resources.LoadAll<Texture2D>(characterImagesPath);
-
-        Debug.Log(characters.Length);
-
-
+        m_characterResourceArray = Resources.LoadAll<Texture2D>(characterImagesPath);
     }
 }
