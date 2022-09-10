@@ -4,10 +4,34 @@ using UnityEngine;
 public class MainGameController : Singleton<MainGameController>
 {
     private int m_monsterWaveNumber = 1;
+    private float m_elapsedTime = 0.0f;
+    private float m_genTimer;
 
     private void Start()
     {
+        InitVariables();
     }
+
+    private void Update()
+    {
+        UpdateMonsterWave();
+    }
+
+    private void UpdateMonsterWave()
+    {
+        m_elapsedTime += Time.deltaTime;
+        if (m_elapsedTime >= m_genTimer)
+        {
+            GenMonster();
+            m_elapsedTime = 0.0f;
+        }
+    }
+
+    private void GenMonster()
+    {
+        EnemyCastle.Instance.CreateMonster(0);
+    }
+
     public void AddMonsterWaveNumber(int addNumber)
     {
         m_monsterWaveNumber += addNumber;
@@ -15,20 +39,20 @@ public class MainGameController : Singleton<MainGameController>
 
     public void RunGregolaWave(Action<int> resultCallback)
     {
-        Debug.Log("±×·¹°ñ¶óÀÇ ½ÃÇèÀÌ ½ÃÀÛµË´Ï´Ù.");
+        Debug.Log("ê·¸ë ˆê³¨ë¼ì˜ ì‹œí—˜ì´ ì‹œì‘ë©ë‹ˆë‹¤.");
 
         int rand = UnityEngine.Random.Range(0, 100);
         if (rand < 30)
         {
             OnSuccessGregolaWave();
-            Debug.Log("±×·¹°ñ¶óÀÇ ½ÃÇè¿¡¼­ Åë°úµÇ¾ú½À´Ï´Ù.");
+            Debug.Log("ê·¸ë ˆê³¨ë¼ì˜ ì‹œí—˜ì—ì„œ í†µê³¼ë˜ì—ˆìŠµë‹ˆë‹¤.");
 
             resultCallback?.Invoke(m_monsterWaveNumber);
         }
         else
         {
             OnFailGregolaWave();
-            Debug.Log("±×·¹°ñ¶óÀÇ ½ÃÇè¿¡¼­ ½ÇÆĞÇÏ¿´½À´Ï´Ù.");
+            Debug.Log("ê·¸ë ˆê³¨ë¼ì˜ ì‹œí—˜ì—ì„œ ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.");
         }
     }
 
@@ -40,5 +64,11 @@ public class MainGameController : Singleton<MainGameController>
     private void OnFailGregolaWave()
     { 
     
+    }
+
+    private void InitVariables()
+    {
+        m_elapsedTime = 0.0f;
+        m_genTimer = 3.0f;
     }
 }
