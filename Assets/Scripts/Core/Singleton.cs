@@ -21,7 +21,7 @@ public class Singleton<T> : MonoBehaviour
                 }
                 if (objs.Length > 1)
                 {
-                    Debug.LogError("There is more than one " + typeof(T).Name + "int the scene.");
+                    Debug.LogError("There is more than one " + typeof(T).Name + "in the scene.");
                 }
                 if (m_instance == null)
                 {

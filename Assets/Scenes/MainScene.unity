@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 920426535}
   - component: {fileID: 920426534}
   m_Layer: 0
-  m_Name: MyCastle
+  m_Name: PlayerCastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

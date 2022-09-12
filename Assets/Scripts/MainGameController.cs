@@ -22,14 +22,14 @@ public class MainGameController : Singleton<MainGameController>
         m_elapsedTime += Time.deltaTime;
         if (m_elapsedTime >= m_genTimer)
         {
-            GenMonster();
+            CreateMonster();
             m_elapsedTime = 0.0f;
         }
     }
 
-    private void GenMonster()
+    private void CreateMonster()
     {
-        EnemyCastle.Instance.CreateMonster(0);
+        EnemyCastle.Instance.CreateLivingEntity();
     }
 
     public void AddMonsterWaveNumber(int addNumber)
