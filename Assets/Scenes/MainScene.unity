@@ -641,7 +641,7 @@ GameObject:
   - component: {fileID: 1382375774}
   - component: {fileID: 1382375775}
   m_Layer: 0
-  m_Name: InitGameDatas
+  m_Name: CDCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

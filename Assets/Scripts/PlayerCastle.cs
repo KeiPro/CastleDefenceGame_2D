@@ -21,7 +21,7 @@ public class PlayerCastle : CastleBase
 
     public override void CreateLivingEntity(int index)
     {
-        Texture2D characterResource = InitGameDatas.Instance.CharacterResourceArray[index] as Texture2D;
+        Texture2D characterResource = CDCore.Instance.CharacterResourceArray[index] as Texture2D;
 
         GameObject unitObj = new GameObject(characterResource.name);
         

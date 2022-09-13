@@ -21,7 +21,7 @@ public class EnemyCastle : CastleBase
 
     public override void CreateLivingEntity(int index)
     {
-        Texture2D unitResource = InitGameDatas.Instance.CharacterResourceArray[index] as Texture2D;
+        Texture2D unitResource = CDCore.Instance.CharacterResourceArray[index] as Texture2D;
 
         GameObject unitObj = new GameObject(unitResource.name);
         var imageComp = unitObj.AddComponent<SpriteRenderer>();
