@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CDEnum;
 
 public class PlayerCastle : CastleBase
 {
@@ -20,7 +21,7 @@ public class PlayerCastle : CastleBase
 
     public override void CreateLivingEntity(int index = 0)
     {
-        var entityEnum = Enums.EntityType.Alliance;
+        var entitytypeEnum = EntityType.Alliance;
 
         Texture2D characterResource = InitGameDatas.Instance.CharacterResourceArray[index] as Texture2D;
 

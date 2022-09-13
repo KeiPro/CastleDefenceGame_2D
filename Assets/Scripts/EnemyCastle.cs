@@ -1,3 +1,4 @@
+using CDEnum;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,13 +21,11 @@ public class EnemyCastle : CastleBase
         Instance = this;
     }
 
-    public override void CreateLivingEntity(int index = 0)
+    public override void CreateLivingEntity(int index)
     {
-        var entityType = Enums.EntityType.Enemy;
-
         var obj = Instantiate(m_enemyObjArray[index], transform.position, Quaternion.identity);
-        var enemyComp = obj.GetComponent<Enemy>();
-        enemyComp.Init();
+        var enemyComp = obj.GetComponent<Unit>();
+        enemyComp.Init(EntityType.Enemy);
         obj.SetActive(true);
     }
 }

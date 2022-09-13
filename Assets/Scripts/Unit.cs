@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CDEnum;
 
-public class Enemy : LivingEntity
+public class Unit : LivingEntity
 {
-    public void Init()
+    private EntityType m_entityType;
+
+    public void Init(EntityType entityType)
     {
         m_hp = 100;
         m_moveSpeed = 3.0f;
+        m_entityType = entityType;
     }
 
     protected override void OnEnable()

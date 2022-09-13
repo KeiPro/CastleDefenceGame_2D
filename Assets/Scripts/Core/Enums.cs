@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Enums
+namespace CDEnum
 {
     public enum EntityType
-    { 
+    {
         Alliance,
         Enemy,
         Netural
