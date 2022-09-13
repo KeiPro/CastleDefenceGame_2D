@@ -26,6 +26,26 @@ public class Unit : LivingEntity
 
     private void Update()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * m_moveSpeed);
+        UpdateMove();
+    }
+
+    private void UpdateMove()
+    {
+        switch (m_entityType)
+        {
+            case EntityType.Alliance:
+                transform.Translate(Vector3.right * Time.deltaTime * m_moveSpeed);
+                break;
+
+            case EntityType.Enemy:
+                transform.Translate(Vector3.left * Time.deltaTime * m_moveSpeed);
+                break;
+
+            case EntityType.Netural:
+
+                break;
+            default:
+                break;
+        }
     }
 }

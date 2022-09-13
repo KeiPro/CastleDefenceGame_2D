@@ -19,15 +19,19 @@ public class PlayerCastle : CastleBase
         Instance = this;
     }
 
-    public override void CreateLivingEntity(int index = 0)
+    public override void CreateLivingEntity(int index)
     {
-        var entitytypeEnum = EntityType.Alliance;
-
         Texture2D characterResource = InitGameDatas.Instance.CharacterResourceArray[index] as Texture2D;
 
-        GameObject characterObj = new GameObject(characterResource.name);
-        var imageComp = characterObj.AddComponent<SpriteRenderer>();
+        GameObject unitObj = new GameObject(characterResource.name);
+        
+        var imageComp = unitObj.AddComponent<SpriteRenderer>();
         Rect rect = new Rect(0, 0, characterResource.width, characterResource.height);
         imageComp.sprite = Sprite.Create(characterResource, rect, new Vector2(0.5f, 0.5f));
+
+        var unitComp = unitObj.AddComponent<Unit>();
+        unitComp.Init(EntityType.Alliance);
+
+        unitObj.transform.position = transform.position;
     }
 }

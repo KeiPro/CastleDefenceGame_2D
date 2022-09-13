@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class EnemyCastle : CastleBase
 {
-    [SerializeField] private GameObject[] m_enemyObjArray;
-
     public static EnemyCastle Instance;
 
     private void OnEnable()
@@ -23,9 +21,17 @@ public class EnemyCastle : CastleBase
 
     public override void CreateLivingEntity(int index)
     {
-        var obj = Instantiate(m_enemyObjArray[index], transform.position, Quaternion.identity);
-        var enemyComp = obj.GetComponent<Unit>();
-        enemyComp.Init(EntityType.Enemy);
-        obj.SetActive(true);
+        Texture2D unitResource = InitGameDatas.Instance.CharacterResourceArray[index] as Texture2D;
+
+        GameObject unitObj = new GameObject(unitResource.name);
+        var imageComp = unitObj.AddComponent<SpriteRenderer>();
+        Rect rect = new Rect(0, 0, unitResource.width, unitResource.height);
+        imageComp.sprite = Sprite.Create(unitResource, rect, new Vector2(0.5f, 0.5f));
+        imageComp.flipX = true;
+
+        var unitComp = unitObj.AddComponent<Unit>();
+        unitComp.Init(EntityType.Enemy);
+
+        unitObj.transform.position = transform.position;
     }
 }

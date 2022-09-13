@@ -29,7 +29,7 @@ public class MainGameController : Singleton<MainGameController>
 
     private void CreateMonster()
     {
-        EnemyCastle.Instance.CreateLivingEntity();
+        EnemyCastle.Instance.CreateLivingEntity(0);
     }
 
     public void AddMonsterWaveNumber(int addNumber)
