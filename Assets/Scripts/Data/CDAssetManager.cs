@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InitGameDatas : Singleton<InitGameDatas>
+public class CDAssetManager : Singleton<CDAssetManager>
 {
     public Object[] CharacterResourceArray => m_characterResourceArray;
     

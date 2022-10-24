@@ -23,7 +23,7 @@ public class PlayerCastle : CastleBase
     {
         var entityEnum = EntityTypeEnum.Alliance;
 
-        Texture2D characterResource = InitGameDatas.Instance.CharacterResourceArray[0] as Texture2D;
+        Texture2D characterResource = CDAssetManager.Instance.CharacterResourceArray[0] as Texture2D;
 
         GameObject characterObj = new GameObject(characterResource.name);
         var imageComp = characterObj.AddComponent<SpriteRenderer>();
