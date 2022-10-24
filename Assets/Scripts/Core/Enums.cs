@@ -1,9 +1,16 @@
-namespace CDEnum
+namespace Enums
 {
-    public enum EntityType
+    public enum EntityTypeEnum
     {
         Alliance,
         Enemy,
         Netural
+    }
+
+    public enum EnemyTypeEnum
+    { 
+        KaKa,
+        Yobin,
+        Wobang
     }
 }

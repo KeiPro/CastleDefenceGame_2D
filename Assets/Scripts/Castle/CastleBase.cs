@@ -2,20 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LivingEntity : MonoBehaviour, IDamageable
+public class CastleBase : MonoBehaviour, IDamageable
 {
-    public string m_name;
     public float m_hp;
-    public float m_moveSpeed;
-
     private bool m_isDead;
 
-    public void SetName(string name)
-    {
-        m_name = name;
-    }
-
-    public string GetName() => m_name;
+    public virtual void CreateLivingEntity() { }
 
     public virtual void OnDamage(float damage)
     {

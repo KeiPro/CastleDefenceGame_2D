@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using CDEnum;
+using Enums;
 
 public class PlayerCastle : CastleBase
 {
@@ -19,19 +19,15 @@ public class PlayerCastle : CastleBase
         Instance = this;
     }
 
-    public override void CreateLivingEntity(int index)
+    public override void CreateLivingEntity()
     {
-        Texture2D characterResource = CDCore.Instance.CharacterResourceArray[index] as Texture2D;
+        var entityEnum = EntityTypeEnum.Alliance;
 
-        GameObject unitObj = new GameObject(characterResource.name);
-        
-        var imageComp = unitObj.AddComponent<SpriteRenderer>();
+        Texture2D characterResource = InitGameDatas.Instance.CharacterResourceArray[0] as Texture2D;
+
+        GameObject characterObj = new GameObject(characterResource.name);
+        var imageComp = characterObj.AddComponent<SpriteRenderer>();
         Rect rect = new Rect(0, 0, characterResource.width, characterResource.height);
         imageComp.sprite = Sprite.Create(characterResource, rect, new Vector2(0.5f, 0.5f));
-
-        var unitComp = unitObj.AddComponent<Unit>();
-        unitComp.Init(EntityType.Alliance);
-
-        unitObj.transform.position = transform.position;
     }
 }
