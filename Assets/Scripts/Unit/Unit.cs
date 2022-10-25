@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : LivingEntity
+public class Unit : LivingEntity
 {
     public virtual void Init()
     {
@@ -18,10 +18,5 @@ public class Enemy : LivingEntity
     public override void OnDamage(float damage)
     {
         base.OnDamage(damage);
-    }
-
-    private void Update()
-    {
-        transform.Translate(Vector3.left * m_moveSpeed * Time.deltaTime);
     }
 }

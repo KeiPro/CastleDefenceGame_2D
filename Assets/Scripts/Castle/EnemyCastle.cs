@@ -24,19 +24,20 @@ public class EnemyCastle : CastleBase
 
     public override void CreateLivingEntity()
     {
-        EnemyTypeEnum enemyType = GetMonsterTypeByRandom();
-        var enemy = EnemyFactory.GetEnemy(enemyType);
+        EnemyUnitTypeEnum enemyType = GetMonsterTypeByRandom();
+        var unit = UnitFactory.GetUnit(EntityTypeEnum.Enemy, (int)enemyType);
         var obj = Instantiate(m_enemyObjArray[0], transform.position, Quaternion.identity);
-        obj.AddComponent(enemy);
-            var enemyComp = obj.GetComponent<Enemy>();
+        obj.AddComponent(unit);
+
+        var enemyComp = obj.GetComponent<Unit>();
         enemyComp.Init();
         obj.SetActive(true);
     }
 
-    private EnemyTypeEnum GetMonsterTypeByRandom()
+    private EnemyUnitTypeEnum GetMonsterTypeByRandom()
     {
-        int monsterMaxCount = Enum.GetValues(typeof(EnemyTypeEnum)).Length;
+        int monsterMaxCount = Enum.GetValues(typeof(EnemyUnitTypeEnum)).Length;
         int index = UnityEngine.Random.Range(0, monsterMaxCount);
-        return (EnemyTypeEnum)index;
+        return (EnemyUnitTypeEnum)index;
     }
 }

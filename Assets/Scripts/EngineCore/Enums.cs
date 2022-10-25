@@ -7,10 +7,17 @@ namespace Enums
         Netural
     }
 
-    public enum EnemyTypeEnum
+    public enum EnemyUnitTypeEnum
     { 
         KaKa,
         Yobin,
         Wobang
+    }
+
+    public enum PlayerUnitTypeEnum
+    { 
+        Bora,
+        Uni,
+        Arma
     }
 }
