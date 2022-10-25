@@ -399,6 +399,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hp: 0
+  m_playerUnitObjArray:
+  - {fileID: 2116958040}
 --- !u!1 &1018322576
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,7 +946,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 325542737}
         m_TargetAssemblyTypeName: MainGameHUD, Assembly-CSharp
-        m_MethodName: OnClickCharacterButton
+        m_MethodName: OnClickUnitButton
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1213,7 +1215,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 325542737}
         m_TargetAssemblyTypeName: MainGameHUD, Assembly-CSharp
-        m_MethodName: OnClickCharacterButton
+        m_MethodName: OnClickUnitButton
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1550,7 +1552,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 325542737}
         m_TargetAssemblyTypeName: MainGameHUD, Assembly-CSharp
-        m_MethodName: OnClickCharacterButton
+        m_MethodName: OnClickUnitButton
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1609,7 +1611,7 @@ GameObject:
   - component: {fileID: 2116958042}
   - component: {fileID: 2116958041}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Unit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

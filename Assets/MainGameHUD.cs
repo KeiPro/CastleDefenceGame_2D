@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class MainGameHUD : MonoBehaviour
 {
-    public void OnClickCharacterButton()
+    public void OnClickUnitButton(int index)
     {
-        PlayerCastle.Instance.CreateLivingEntity();
+        PlayerCastle.Instance.CreateLivingEntity(index);
     }
 }

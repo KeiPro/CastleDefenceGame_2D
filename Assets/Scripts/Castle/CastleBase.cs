@@ -7,7 +7,7 @@ public class CastleBase : MonoBehaviour, IDamageable
     public float m_hp;
     private bool m_isDead;
 
-    public virtual void CreateLivingEntity() { }
+    public virtual void CreateLivingEntity(int index = 0) { }
 
     public virtual void OnDamage(float damage)
     {

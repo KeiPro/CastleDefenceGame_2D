@@ -22,15 +22,15 @@ public class EnemyCastle : CastleBase
         Instance = this;
     }
 
-    public override void CreateLivingEntity()
+    public override void CreateLivingEntity(int index = 0)
     {
         EnemyUnitTypeEnum enemyType = GetMonsterTypeByRandom();
         var unit = UnitFactory.GetUnit(EntityTypeEnum.Enemy, (int)enemyType);
         var obj = Instantiate(m_enemyObjArray[0], transform.position, Quaternion.identity);
         obj.AddComponent(unit);
 
-        var enemyComp = obj.GetComponent<Unit>();
-        enemyComp.Init();
+        var unitComp = obj.GetComponent<Unit>();
+        unitComp.Init();
         obj.SetActive(true);
     }
 
