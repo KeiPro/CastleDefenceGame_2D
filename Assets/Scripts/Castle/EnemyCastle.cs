@@ -6,7 +6,8 @@ using System;
 
 public class EnemyCastle : CastleBase
 {
-    [SerializeField] private GameObject[] m_enemyObjArray;
+    [SerializeField] private List<UnitData> m_unitDataList;
+    [SerializeField] private GameObject m_unitObj;
 
     public static EnemyCastle Instance;
 
@@ -24,20 +25,20 @@ public class EnemyCastle : CastleBase
 
     public override void CreateLivingEntity(int index = 0)
     {
-        EnemyUnitTypeEnum enemyType = GetMonsterTypeByRandom();
-        var unit = UnitFactory.GetUnit(EntityTypeEnum.Enemy, (int)enemyType);
-        var obj = Instantiate(m_enemyObjArray[0], transform.position, Quaternion.identity);
-        obj.AddComponent(unit);
-
+        int randomIndex = GetMonsterTypeByRandom();
+        var obj = Instantiate(m_unitObj, transform.position, Quaternion.identity);
         var unitComp = obj.GetComponent<Unit>();
-        unitComp.Init();
+
+        //데이터 셋팅이 이루어지고 Init을 해야 한다.
+        unitComp.UnitData = m_unitDataList[randomIndex];
+        unitComp.Init(EntityTypeEnum.Enemy);
         obj.SetActive(true);
     }
 
-    private EnemyUnitTypeEnum GetMonsterTypeByRandom()
+    private int GetMonsterTypeByRandom()
     {
-        int monsterMaxCount = Enum.GetValues(typeof(EnemyUnitTypeEnum)).Length;
-        int index = UnityEngine.Random.Range(0, monsterMaxCount);
-        return (EnemyUnitTypeEnum)index;
+        int monsterMaxCount = m_unitDataList.Count;
+        int random = UnityEngine.Random.Range(0, monsterMaxCount);
+        return random;
     }
 }

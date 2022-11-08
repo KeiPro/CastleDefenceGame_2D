@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class LivingEntity : MonoBehaviour, IDamageable
 {
-    public string m_name;
-    public float m_hp;
-    public float m_moveSpeed;
+    protected string m_name;
+    protected float m_hp;
+    protected float m_moveSpeed;
+    protected int m_damage;
 
     private bool m_isDead;
-
-    public void SetName(string name)
-    {
-        m_name = name;
-    }
-
-    public string GetName() => m_name;
 
     public virtual void OnDamage(float damage)
     {

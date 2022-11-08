@@ -399,8 +399,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hp: 0
-  m_playerUnitObjArray:
-  - {fileID: 2116958040}
+  m_unitDataList:
+  - {fileID: 11400000, guid: 7d29e5f9d7499644cb0b7be3379673fa, type: 2}
+  - {fileID: 11400000, guid: f3a9e1b33efae954abe1a6bd94b16ffe, type: 2}
+  - {fileID: 11400000, guid: 6e01f4719804c2d448dd80a389a02b7f, type: 2}
+  m_unitObj: {fileID: 2116958040}
 --- !u!1 &1018322576
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,8 +502,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hp: 0
-  m_enemyObjArray:
-  - {fileID: 2116958040}
+  m_unitDataList:
+  - {fileID: 11400000, guid: 25d581bea2932aa4e8ec757b140432ad, type: 2}
+  - {fileID: 11400000, guid: 7f2e7fe7bf8ccf94ea709b8e03564733, type: 2}
+  - {fileID: 11400000, guid: 2b7da6c7967931342bfd810df03ced1d, type: 2}
+  m_unitObj: {fileID: 2116958040}
 --- !u!1 &1379939481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,6 +1616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2116958042}
   - component: {fileID: 2116958041}
+  - component: {fileID: 2116958043}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Untagged
@@ -1657,7 +1664,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: cc7d45209f2d5b241b988aa1df7409f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1684,3 +1691,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2116958043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116958040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceec9e340ff5c9944aa30d545a148e78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_unitData: {fileID: 0}

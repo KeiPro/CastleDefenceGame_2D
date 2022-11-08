@@ -6,18 +6,4 @@ namespace Enums
         Enemy,
         Netural
     }
-
-    public enum EnemyUnitTypeEnum
-    { 
-        KaKa,
-        Yobin,
-        Wobang
-    }
-
-    public enum PlayerUnitTypeEnum
-    { 
-        Bora,
-        Uni,
-        Arma
-    }
 }

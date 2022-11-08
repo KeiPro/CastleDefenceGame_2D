@@ -5,7 +5,8 @@ using Enums;
 
 public class PlayerCastle : CastleBase
 {
-    [SerializeField] private GameObject[] m_playerUnitObjArray;
+    [SerializeField] private List<UnitData> m_unitDataList;
+    [SerializeField] private GameObject m_unitObj;
 
     public static PlayerCastle Instance;
 
@@ -23,16 +24,13 @@ public class PlayerCastle : CastleBase
 
     public override void CreateLivingEntity(int index = 0)
     {
-        var unit = UnitFactory.GetUnit(EntityTypeEnum.Alliance, index);
-
-        var obj = Instantiate(m_playerUnitObjArray[0], transform.position, Quaternion.identity);
-        obj.AddComponent(unit);
-
+        var obj = Instantiate(m_unitObj, transform.position, Quaternion.identity);
         var unitComp = obj.GetComponent<Unit>();
-        unitComp.Init();
-        obj.SetActive(true);
 
-        // 추후 활용. Resources.Load를 사용하는 방식인데 이 부분도 추후에는 Atlas를 이용하는 방식으로 수정되어야 함.
+        unitComp.UnitData = m_unitDataList[index];
+        unitComp.Init(EntityTypeEnum.Alliance);
+
+        obj.SetActive(true);
 
         //Texture2D characterResource = CDAssetManager.Instance.CharacterResourceArray[0] as Texture2D;
 

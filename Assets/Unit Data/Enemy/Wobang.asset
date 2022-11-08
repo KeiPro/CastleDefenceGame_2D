@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad38dfe5ace54f40991b216d36ce682, type: 3}
+  m_Name: Wobang
+  m_EditorClassIdentifier: 
+  m_unitName: Wobang
+  m_hp: 200
+  m_damage: 1
+  m_moveSpeed: 1
+  m_sprite: {fileID: 21300000, guid: 6d62df20d852b6743a75e30fa15c83a4, type: 3}

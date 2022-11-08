@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad38dfe5ace54f40991b216d36ce682, type: 3}
+  m_Name: Yobin
+  m_EditorClassIdentifier: 
+  m_unitName: Yobin
+  m_hp: 100
+  m_damage: 1
+  m_moveSpeed: 2
+  m_sprite: {fileID: 21300000, guid: 60e4a9b415b2c224fb260b1f168a6b8a, type: 3}
